@@ -1,6 +1,6 @@
 package skypro.java.course1.lesson4;
 
-public class T6_FirstRecipe {
+public class T6_Recipe {
     public static void main(String[] args) {
         /*
         Вот один из рецептов, который использует наш спортсмен перед тренировкой:
@@ -22,8 +22,9 @@ public class T6_FirstRecipe {
         int iceCream = 2;
         int eggs = 4;
 
+        int grPerKg = 1000;
         float weightGrams = bananas * weightBanana + milk * weightMilk + iceCream * weightIceCream + eggs * weightEgg;
-        float weightKg = weightGrams / 1000;
+        float weightKg = weightGrams / grPerKg;
         System.out.println("Вес спорт-завтрака равен " + weightKg + " кг");
     }
 }

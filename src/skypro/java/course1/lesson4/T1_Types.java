@@ -30,23 +30,23 @@ public class T1_Types {
         /*
         Инициализируйте переменные, используя изученные ранее типы переменных.
         Значения:
-        27.12 ,  987 678 965 549 , 2,786 , false, 569 , -159 , 27897 , 67.
+        27.12 ,  987 678 965 549 , 2, 786 , false, 569 , -159 , 27897 , 67.
          */
         System.out.println();
         typesByte = 67;
-        typesInt = 569;
-        typesShort = -159;
-        typesLong = 27897L;
-        long longNumber = 987_678_965_549L;
-        typesFloat = 27.12F;
+        typesInt = 27897;
+        typesShort = 569;
+        short shortNumber = -159;
+        typesLong = 987_678_965_549L;
+        typesFloat = 27.12f;
         typesDouble = 2.786;
         boolean threeApples = 5 < 1;
 
         System.out.println("Теперь значение переменной с типом byte равно " + typesByte);
         System.out.println("Теперь значение переменной с типом short равно " + typesShort);
+        System.out.println("Ещё одна переменная с типом short - значение равно " + shortNumber);
         System.out.println("Теперь значение переменной с типом int равно " + typesInt);
         System.out.println("Теперь значение переменной с типом long равно " + typesLong);
-        System.out.println("Ещё одна переменная с типом long - значение равно " + longNumber);
         System.out.println("Теперь значение переменной с типом float равно " + typesFloat);
         System.out.println("Теперь значение переменной с типом double равно " + typesDouble);
         System.out.println("Пять меньше одного, это конечно же " + threeApples);

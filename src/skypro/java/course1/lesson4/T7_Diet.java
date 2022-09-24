@@ -1,6 +1,6 @@
 package skypro.java.course1.lesson4;
 
-public class T7_SecondRecipe {
+public class T7_Diet {
     public static void main(String[] args) {
         /*
         Правила соревнований обновились, и теперь нашему спортсмену нужно сбросить 7 кг,
@@ -11,5 +11,20 @@ public class T7_SecondRecipe {
         Посчитайте, сколько может потребоваться дней в среднем, чтобы добиться результата похудения.
         Результаты всех подсчетов выведите в консоль.
          */
+        int grPerKg = 1000;
+        int extraKg = 7;
+        int extraGr = extraKg * grPerKg;
+
+        int lightDiet = 250;
+        int hardDiet = 500;
+
+        int daysToGoalLight = extraGr / lightDiet;
+        System.out.println(daysToGoalLight + " дней уйдет на похудение, если терять каждый день по " + lightDiet + " гр");
+
+        int daysToGoalHard = extraGr / hardDiet;
+        System.out.println(daysToGoalHard + " дней уйдет на похудение, если терять каждый день по " + hardDiet + " гр");
+
+        int averageDaysToGoal = (daysToGoalHard + daysToGoalLight) / 2;
+        System.out.println("В среднем может потребоваться " + averageDaysToGoal + " дней, чтобы добиться результата похудения");
     }
 }

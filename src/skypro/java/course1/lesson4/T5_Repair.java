@@ -17,6 +17,6 @@ public class T5_Repair {
         brownPaint = brownPaint * classesAtSchool;
 
         System.out.println("В школе, где " + classesAtSchool + " классов, нужно " + whitePaint +
-                " банок белой краски и " + brownPaint + " банок коричневой краски");
+                " банок белой краски и " + brownPaint + " банок коричневой краски.");
     }
 }
