@@ -6,6 +6,7 @@ public class Conditional_Operators {
         task2_mobile_application_light();
         task3_leap_years();
         task4_delivery();
+        task5_month();
     }
 
     private static void task1_mobile_application() {
@@ -99,15 +100,50 @@ public class Conditional_Operators {
 
         int deliveryDistance = 100;
         int deliveryDays = 1;
-        int distanceAddDays = 40; // Шаг расстояния , при котором увеличивается доставка на СУТКИ
-        int remainingDistance = deliveryDistance - 20; // Если разница <= 0 , то выведем СУТКИ на доставку, если больше, то ИНАЧЕ
+        int distanceAddDays = 40; // Шаг расстояния, при котором увеличивается доставка на СУТКИ
+        int remainingDistance = deliveryDistance - 20; // Если разница <= 0, то выведем СУТКИ на доставку, если больше, то ИНАЧЕ
         System.out.print("Потребуется дней: ");
         if (remainingDistance <= 0) {
-            System.out.println(deliveryDays);
+            System.out.println(deliveryDays + "\n");
         } else if (remainingDistance % distanceAddDays != 0) {
-            System.out.println(deliveryDays += remainingDistance / distanceAddDays + 1);
+            System.out.println((deliveryDays += remainingDistance / distanceAddDays + 1) + "\n");
         } else {
-            System.out.println(deliveryDays += remainingDistance / distanceAddDays);
+            System.out.println((deliveryDays += remainingDistance / distanceAddDays) + "\n");
+        }
+    }
+
+    public static void task5_month() {
+        System.out.println("Задача 5.\n");
+        /*
+        Напишите программу, которая определяет по номеру месяца в году, к какому сезону этот месяц принадлежит.
+        Например, 1 месяц (он же январь) принадлежит к сезону зима.
+        Для написания программы используйте оператор switch. Для обозначения номера месяца используйте переменную monthNumber = 12.
+        Пропишите условие, при котором программа не будет выполняться (номер месяца больше 13).
+         */
+        int monthNumber = 12;
+        switch (monthNumber) {
+            case 12:
+            case 1:
+            case 2:
+                System.out.println("Зимний месяц.\n");
+                break;
+            case 3:
+            case 4:
+            case 5:
+                System.out.println("Весенний месяц.\n");
+                break;
+            case 6:
+            case 7:
+            case 8:
+                System.out.println("Летний месяц.\n");
+                break;
+            case 9:
+            case 10:
+            case 11:
+                System.out.println("Осенний месяц.\n");
+                break;
+            default:
+                System.out.println("Такого месяца не существует.\n");
         }
     }
 }
