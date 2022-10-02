@@ -7,6 +7,8 @@ public class Conditional_Operators {
         task3_leap_years();
         task4_delivery();
         task5_month();
+        task6_dop_bank();
+        task7_dop_bank_credit();
     }
 
     private static void task1_mobile_application() {
@@ -94,7 +96,7 @@ public class Conditional_Operators {
         Доставка в пределах 60 км до 100 км добавляет еще одни сутки.
         То есть с каждым следующим интервалом доставки срок увеличивается на 1 день.
         Напишите программу, которая выдает сообщение в консоль:
-        "Потребуется дней: " + срок доставки
+        "Потребуется дней: " + срок доставки.
         Объявите целочисленную переменную deliveryDistance = 95, которая содержит дистанцию до клиента.
         */
 
@@ -144,6 +146,103 @@ public class Conditional_Operators {
                 break;
             default:
                 System.out.println("Такого месяца не существует.\n");
+        }
+    }
+
+    public static void task6_dop_bank() {
+        System.out.println("Задача 6.\n");
+        /*
+        Людям старше (или равно) 23 лет мы предоставляем лимит в размере 3 зарплат.
+        Людям младше 23 лет мы предоставляем лимит в размере 2 зарплат.
+        Если заработная плата клиента выше (или равно) 50 тысяч, мы увеличиваем лимит в 1.2 раза.
+        Если заработная плата выше (или равно) 80 тысяч, мы увеличиваем лимит в 1.5 раза.
+        Наша задача: написать программу, которая показывает, какую сумму на кредитке может получить клиент.
+        Вводные данные: переменная age = 19 для обозначения возраста клиента, salary = 58_000 для обозначения зарплаты клиента.
+        Увеличения не могут быть применены одновременно. Необходимо вывести максимальный лимит в консоль в формате:
+        «Мы готовы выдать вам кредитную карту с лимитом *** рублей».
+        Критерии оценки
+        • При изменении значения переменной age результат вывода в консоль изменяется согласно условиям задачи
+        • При изменении значения переменной salary результат вывода в консоль изменяется согласно условиям задачи
+        • Написанный код отрабатывает условия задачи и изменение значений переменных, выводит в консоль корректный результат
+        • Правила синтаксиса и пунктуации соблюдены.
+         */
+        int age = 25;
+        int standartAge = 23;
+        int salary = 30_000;
+        int standardSalary = 50_000;
+        int moreStandartSalary = 80_000;
+        int limitYoung = salary * 2;
+        int limitAdult = salary * 3;
+        float creditLimit;
+        System.out.print("Мы готовы выдать Вам кредитную карту с лимитом ");
+        if (age >= standartAge && salary >= moreStandartSalary) {
+            creditLimit = limitAdult * 1.5f;
+        } else if (age >= standartAge && salary >= standardSalary) {
+            creditLimit = limitAdult * 1.2f;
+        } else if (age >= standartAge && salary < standardSalary) {
+            creditLimit = limitAdult;
+        } else if (age < standartAge && salary >= moreStandartSalary) {
+            creditLimit = limitYoung * 1.5f;
+        } else if (age < standartAge && salary >= standardSalary) {
+            creditLimit = limitYoung * 1.2f;
+        } else {
+            creditLimit = limitYoung;
+        }
+        System.out.println(creditLimit + " рублей.\n");
+    }
+
+    public static void task7_dop_bank_credit() {
+        System.out.println("Задание 7.\n");
+        /*
+        Базовая ставка для клиента — 10% годовых (0.1). Срок кредитования — 12 месяцев.
+        Максимальный ежемесячный платеж — 50% от ЗП.
+        Если возраст меньше 23, то добавляем 1% к ставке. (0.11)
+        Если возраст меньше 30, то добавляем 0.5% к ставке. (0.105)
+        Если зарплата больше 80_000, уменьшаем ставку на 0.7%. (0.007)
+        Нам нужно написать программу для предварительного одобрения/отказа заявки по кредиту.
+        Вводные данные: используйте переменные age = 25 для обозначения возраста, salary = 60_000 для обозначения зарплаты,
+        wantedSum = 330_000 для обозначения желаемой суммы кредита.
+        Подсчитайте и выведите ответ, одобрен кредит или нет. На основании зарплаты подсчитайте максимальный допустимый платеж.
+        Если максимальный допустимый платеж по ЗП больше стандартного платежа по кредиту согласно процентной ставке,
+        то кредит одобрен, если меньше — отказан.
+        Пример ответа в консоль: «Максимальный платеж при ЗП * равен * рублей. Платеж по кредиту *** рублей. Одобрено/отказано».
+        Критерии оценки
+        • При изменении значения переменной age результат вывода в консоль изменяется согласно условиям задачи
+        • При изменении значения переменной salary результат вывода в консоль изменяется согласно условиям задачи
+        • Написанный код отрабатывает условия задачи и изменение значений переменных, выводит в консоль корректный результат
+        • Нет вложенности в коде.
+         */
+        int age = 30;
+        int salary = 30_000;
+        int standartSalary = 80_000;
+        int wantedSum = 100_000;
+        int maxMonthPayment = salary / 2;
+        float monthPayment;
+        float baseRate = 0.1f;
+        float baseRateStandartSalary = 0.093f;
+        float baseRateLess23Age = 0.11f;
+        float baseRateLess30Age = 0.105f;
+        float baseRateLess23AgeStandartSalary = 0.103f;
+        float baseRateLess30AgeStandartSalary = 0.098f;
+        System.out.print("Максимальный платеж при ЗП " + salary + " руб. равен " + maxMonthPayment + " руб. Платеж по кредиту ");
+        if (age >= 30 && salary >= standartSalary) {
+            baseRate = baseRateStandartSalary;
+        } else if (age >= 30 && salary < standartSalary) {
+        } else if (age >= 23 && salary >= standartSalary) {
+            baseRate = baseRateLess30AgeStandartSalary;
+        } else if (age >= 23 && salary < standartSalary) {
+            baseRate = baseRateLess30Age;
+        } else if (age < 23 && salary >= standartSalary) {
+            baseRate = baseRateLess23AgeStandartSalary;
+        } else {
+            baseRate = baseRateLess23Age;
+        }
+        monthPayment = wantedSum * baseRate + wantedSum / 12;
+        System.out.print(monthPayment + " рублей. ");
+        if (monthPayment >= maxMonthPayment) {
+            System.out.println("Не одобрено.\n");
+        } else {
+            System.out.println("Одобрено.\n");
         }
     }
 }
