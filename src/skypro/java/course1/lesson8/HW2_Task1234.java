@@ -21,14 +21,14 @@ public class HW2_Task1234 {
         в 12 миллионов рублей при условии, что процент банка от накоплений не меняется, а всегда равен 7%.
         Выведите в консоль результат программы с указанием суммы накоплений по каждому месяцу.
          */
-        int savings = 15_000;
+        double savings = 15_000;
         int goal = 12_000_000;
-        float interestRate = 0.07f;
+        double interestRate = 0.07;
         int month = 0;
         while (savings < goal) {
             month++;
             savings += savings * interestRate;
-            System.out.println("Месяц " + month + ", сумма накоплений равна " + savings + " рублей.");
+            System.out.printf("Месяц %d, сумма накоплений равна %.1f\n", month, savings);
         }
     }
 
@@ -39,15 +39,15 @@ public class HW2_Task1234 {
         а только каждый шестой.
         Должны быть видны накопления за 6, 12, 18, 24 и далее месяцы.
          */
-        int savings = 15_000;
+        double savings = 15_000;
         int goal = 12_000_000;
-        float interestRate = 0.07f;
+        double interestRate = 0.07;
         int month = 0;
         while (savings < goal) {
             month++;
             savings += savings * interestRate;
             if (month % 6 == 0) {
-                System.out.println("Месяц " + month + ", сумма накоплений равна " + savings + " рублей.");
+                System.out.printf("Месяц %d, сумма накоплений равна %.1f\n", month, savings);
             }
         }
     }
@@ -61,12 +61,13 @@ public class HW2_Task1234 {
         Напишите программу, которая будет выводить Василию сумму его накоплений
         за следующие каждые полгода в течение 9 лет.
          */
-        int savings = 15_000;
-        float interestRate = 0.07f;
-        for (int i = 1; i <= 108; i++) {
+        double savings = 15_000;
+        double interestRate = 0.07;
+        int Year9 = 12 * 9;
+        for (int i = 1; i <= Year9; i++) {
             savings += savings * interestRate;
             if (i % 6 == 0) {
-                System.out.println("Месяц " + i + ", сумма накоплений равна " + savings + " рублей.");
+                System.out.printf("Месяц %d, сумма накоплений равна %.1f\n", i, savings);
             }
         }
     }
@@ -87,7 +88,7 @@ public class HW2_Task1234 {
         int friday = 3;
         for (int i = 1; i <= 31; i++) {
             if (i == friday) {
-                System.out.println("Сегодня пятница, " + friday + "-е число. Необходимо подготовить отчет");
+                System.out.printf("Сегодня пятница, %d-е число. Необходимо подготовить отчет.\n", friday);
                 friday += 7;
             }
         }

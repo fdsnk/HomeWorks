@@ -23,10 +23,8 @@ public class HW1_Task123 {
         while (total <= goal) {
             month++;
             total += salary + total / 100;
-//            Проверка месяца и накоплений
-//            System.out.println("Месяц " + month + ", сумма накоплений равна " + total + " рублей.");
         }
-        System.out.println("Месяц " + month + ", сумма накоплений равна " + total + " рублей.");
+        System.out.printf("Месяц %d, сумма накоплений равна %d рублей.\n", month, total);
     }
 
     public static void task2() {
@@ -43,11 +41,11 @@ public class HW1_Task123 {
         int num = 0;
         while (num < 10) {
             num++;
-            System.out.print(num + " ");
+            System.out.printf("%d ", num);
         }
         System.out.println();
         for (;num > 0; --num) {
-            System.out.print(num + " ");
+            System.out.printf("%d ", num);
         }
     }
 
@@ -68,7 +66,7 @@ public class HW1_Task123 {
             birthRate = 17 * countryPopulation / 1000;
             mortalityRate = 8 * countryPopulation / 1000;
             countryPopulation += birthRate - mortalityRate;
-            System.out.println("Год " + i + ", численность населения составляет " + countryPopulation);
+            System.out.printf("Год %d, численность населения составляет %d.\n", i, countryPopulation);
         }
     }
 }

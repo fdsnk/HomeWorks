@@ -54,7 +54,7 @@ public class HW3_Task12 {
         int multiplication;
         for (int i = 1; i <= 10; i++) {
             multiplication = num2 * i;
-            System.out.println(num2 + "*" + i + "=" + multiplication);
+            System.out.printf("%d * %d = %d\n", num2, i, multiplication);
         }
 
     }
