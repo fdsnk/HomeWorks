@@ -23,9 +23,11 @@ public class HW1_Task123 {
         while (total <= goal) {
             total += salary;
             total += total / 100;
+            if (total >= goal) {
+                System.out.printf("Месяц %d, сумма накоплений равна %d рублей.\n", month, total);
+            }
             month++;
         }
-        System.out.printf("Месяц %d, сумма накоплений равна %d рублей.\n", month, total);
     }
 
     public static void task2() {
