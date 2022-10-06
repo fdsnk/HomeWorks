@@ -24,11 +24,11 @@ public class HW2_Task1234 {
         double savings = 15_000;
         int goal = 12_000_000;
         double interestRate = 0.07;
-        int month = 0;
+        int month = 1;
         while (savings < goal) {
-            month++;
             savings += savings * interestRate;
-            System.out.printf("Месяц %d, сумма накоплений равна %.1f\n", month, savings);
+            System.out.printf("Месяц %d, сумма накоплений равна %.2f\n", month, savings);
+            month++;
         }
     }
 
@@ -42,13 +42,13 @@ public class HW2_Task1234 {
         double savings = 15_000;
         int goal = 12_000_000;
         double interestRate = 0.07;
-        int month = 0;
+        int month = 1;
         while (savings < goal) {
-            month++;
             savings += savings * interestRate;
             if (month % 6 == 0) {
-                System.out.printf("Месяц %d, сумма накоплений равна %.1f\n", month, savings);
+                System.out.printf("Месяц %d, сумма накоплений равна %.2f\n", month, savings);
             }
+            month++;
         }
     }
 
@@ -67,7 +67,7 @@ public class HW2_Task1234 {
         for (int i = 1; i <= Year9; i++) {
             savings += savings * interestRate;
             if (i % 6 == 0) {
-                System.out.printf("Месяц %d, сумма накоплений равна %.1f\n", i, savings);
+                System.out.printf("Месяц %d, сумма накоплений равна %.2f\n", i, savings);
             }
         }
     }
@@ -85,12 +85,9 @@ public class HW2_Task1234 {
         В нашем месяце 31 день. В результате у вас должно вывестись от 4 до 5 сообщений с напоминаниями
         по разным датам.
          */
-        int friday = 3;
-        for (int i = 1; i <= 31; i++) {
-            if (i == friday) {
-                System.out.printf("Сегодня пятница, %d-е число. Необходимо подготовить отчет.\n", friday);
-                friday += 7;
-            }
+        int f = 3; // Номер первой пятницы месяца (число от 1 до 7)
+        for (; f <= 31; f += 7) {
+            System.out.printf("Сегодня пятница, %d-е число. Необходимо подготовить отчет.\n", f);
         }
     }
 }
