@@ -32,7 +32,7 @@ public class Arrays_Part_2 {
          * (то есть сумму всех трат за месяц поделить на количество дней), и вывести в консоль результат в формате:
          * «Средняя сумма трат за месяц составила … рублей».
          */
-        double average = sum / arr.length - 1;
+        double average = sum / arr.length;
         System.out.printf("Средняя сумма трат за месяц составила %.2f рублей\n", average);
 
         System.out.println("\nЗадача 4.\n");
