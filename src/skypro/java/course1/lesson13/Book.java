@@ -15,6 +15,7 @@ public class Book {
     public String getName() {
         return this.name;
     }
+
     public String getAuthorName() {
         return this.fullName.getFullName();
     }
