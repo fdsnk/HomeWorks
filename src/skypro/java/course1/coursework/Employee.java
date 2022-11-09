@@ -1,14 +1,14 @@
 package skypro.java.course1.coursework;
 
 public class Employee {
-    String firstName;
-    String middleName;
-    String lastName;
-     String fullName;
-    int department;
-    float salary;
-    static int counter;
-    int id;
+    private final String firstName;
+    private final String middleName;
+    private final String lastName;
+    private final String fullName;
+    private int department;
+    private float salary;
+    private static int counter;
+    private final int id;
 
     public Employee(String lastName, String firstName, String middleName, int department, float salary) {
         this.lastName = lastName;
@@ -22,10 +22,10 @@ public class Employee {
 
     @Override
     public String toString() {
-        return "Сотрудник №"  + id + '\n' +
+        return '\n' + "Сотрудник №" + id + '\n' +
                 "ФИО: " + fullName + '\n' +
                 "Отдел: " + department + '\n' +
-                "Зарплата: " + salary + '\n';
+                "Зарплата: " + salary;
     }
 
     public String getFullName() {
@@ -48,7 +48,7 @@ public class Employee {
         this.department = department;
     }
 
-        public void setSalary(float salary) {
+    public void setSalary(float salary) {
         this.salary = salary;
     }
-    }
+}
