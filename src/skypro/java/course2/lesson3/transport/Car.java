@@ -10,43 +10,20 @@ public class Car extends Transport {
     private String registerNumber;
     private final int numberOfSeats;
     private boolean summerTires; // 1 - лето; 0 - зима.
-    private static final String DEFAULT = "...default...";
+//    private static final String DEFAULT = "...default...";
 
-    //    private Key key;
-    //    private Insurance insurance;
-    public static String validateString(String needsValidate) {
-        needsValidate = (needsValidate != null && !needsValidate.isEmpty() && !needsValidate.isBlank() ? needsValidate : DEFAULT);
-        return needsValidate;
-    }
+//    public static String validateString(String needsValidate) {
+//        needsValidate = (needsValidate != null && !needsValidate.isEmpty() && !needsValidate.isBlank() ? needsValidate : DEFAULT);
+//        return needsValidate;
+//    }
 
     public Car(String brand, String model, int prodYear, String prodCountry, String color, int maxSpeed,float engineVolume,
                String transmission, String bodyType, String registerNumber, int numberOfSeats, boolean summerTires) {
         super(brand, model, prodYear, prodCountry, color, maxSpeed);
-
         setEngineVolume(engineVolume);
-//        this.engineVolume = (engineVolume > 0 ? engineVolume : 1.5f);
         setTransmission(transmission);
-//        this.transmission = (transmission != null && !transmission.isEmpty() && !transmission.isBlank() ? transmission : "МКПП");
         this.bodyType = validateString(bodyType);
-//        this.registerNumber = (registerNumber != null && !registerNumber.isEmpty() && !registerNumber.isBlank() ? registerNumber : "х000хх000");
         setRegisterNumber(registerNumber);
-//        this.registerNumber = registerNumber;
-//        String correctNumber = registerNumber.toLowerCase();
-//        correctNumber = correctNumber.replace(" ", "");
-//
-//        String regex = "^[АВЕКМНОРСТУХавекмнорстух]{1}[0-9]{3}[АВЕКМНОРСТУХавекмнорстух]{2}[0-9]{3}";
-//        Pattern pattern = Pattern.compile(regex);
-//        Matcher matcher = pattern.matcher(correctNumber);
-//
-//        if (correctNumber == null || correctNumber.trim().isEmpty()) {
-//            this.registerNumber = "...отсутствует...";
-//        } else if (matcher.matches() == true) {
-//            this.registerNumber = correctNumber;
-//        } else if (matcher.matches() == false) {
-//            this.registerNumber = "введен не корректно";
-//        } else {
-//            this.registerNumber = correctNumber;
-//        }
         this.numberOfSeats = (numberOfSeats > 0 ? numberOfSeats : 2);
         this.summerTires = summerTires;
     }
@@ -55,7 +32,7 @@ public class Car extends Transport {
     public String toString() {
         return String.format("%s %s, %d года выпуска, страна сборки: %s, цвет кузова: %s, максимальная скорость передвижения: %d км/ч, " +
                         "объем двигателя: %.1f литра, тип кузова: %s, %s,  регистрационный номер: %s, " +
-                        "количество мест: %d, %s резина.", brand, model, prodYear, prodCountry, color, maxSpeed,
+                        "количество мест: %d, %s резина.", getBrand(), getModel(), getProdYear(), getProdCountry(), getColor(), getMaxSpeed(),
                 engineVolume, bodyType, transmission, registerNumber, numberOfSeats, isSummerTires() ? "летняя" : "зимняя");
     }
 

@@ -1,12 +1,12 @@
 package skypro.java.course2.lesson3.transport;
 
 public class Transport {
-    String brand;
-    String model;
-    String color;
-    int prodYear;
-    String prodCountry;
-    int maxSpeed;
+    private String brand;
+    private String model;
+    private String color;
+    private int prodYear;
+    private String prodCountry;
+    private int maxSpeed;
 
     private static final String DEFAULT = "...default...";
 //    private final String DEFAULT_COLOR = "белый";
@@ -21,8 +21,8 @@ public class Transport {
         this.model = validateString(model);
         this.prodYear = (prodYear > 0 ? prodYear : 2000);
         this.prodCountry = validateString(prodCountry);
-        this.color = validateString(color);
-        this.maxSpeed = (maxSpeed > 0 ? maxSpeed : 90);
+        setColor(color);
+        setMaxSpeed(maxSpeed);
     }
 
     @Override
@@ -39,7 +39,6 @@ public class Transport {
         return model;
     }
 
-
     public String getColor() {
         return color;
     }
@@ -50,5 +49,17 @@ public class Transport {
 
     public String getProdCountry() {
         return prodCountry;
+    }
+
+    public int getMaxSpeed() {
+        return maxSpeed;
+    }
+
+    public void setColor(String color) {
+        this.color = validateString(color);
+    }
+
+    public void setMaxSpeed(int maxSpeed) {
+        this.maxSpeed = (maxSpeed > 0 ? maxSpeed : 90);
     }
 }

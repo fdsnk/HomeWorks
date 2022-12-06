@@ -1,6 +1,8 @@
 package skypro.java.course2.lesson3;
 
+import skypro.java.course2.lesson3.transport.Bus;
 import skypro.java.course2.lesson3.transport.Car;
+import skypro.java.course2.lesson3.transport.Train;
 import skypro.java.course2.lesson3.transport.Transport;
 
 public class Main {
@@ -24,5 +26,16 @@ public class Main {
                 0,"АКПП", "Кроссовер", "М444ММ147", 7, false);
 
         System.out.println(lada + "\n" + audi + "\n" + bmw + "\n" + kia);
+        System.out.println();
+
+        Bus paz123 = new Bus("ПАЗ", "123", 1960, "Россия", "Красный", 90);
+
+        System.out.println(paz123);
+        System.out.println();
+
+        Train train1 = new Train("Ласточка", "B-901", 2011, "России", "", 301, 3500, 9,
+                "Белорусского вокзала", "Минск-Пассажирский", 11);
+
+        System.out.println(train1);
     }
 }
