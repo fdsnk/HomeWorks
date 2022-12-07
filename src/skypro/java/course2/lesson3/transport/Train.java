@@ -19,7 +19,7 @@ public class Train extends Transport {
     @Override
     public String toString() {
         return String.format("%s %s, %d года выпуска, страна сборки: %s, цвет кузова: %s, максимальная скорость передвижения: %d км/ч, " +
-                        "цена поездки: %.1 руб., время поездки: %d минут, станция отправления: %s, станция прибытия: %s, " +
+                        "цена поездки: %d руб., время поездки: %d минут, станция отправления: %s, станция прибытия: %s, " +
                         "количество вагонов: %d.", getBrand(), getModel(), getProdYear(), getProdCountry(), getColor(), getMaxSpeed(),
                 priceTrip, timeTrip, departureStation, finalStation, numberOfWagons);
     }
@@ -61,7 +61,7 @@ public class Train extends Transport {
     }
 
     public void setNumberOfWagons(int numberOfWagons) {
-        this.numberOfWagons = (numberOfWagons >= 0 ? numberOfWagons : 0);
+        this.numberOfWagons = (numberOfWagons >= 0 ? numberOfWagons : 1);
     }
 
 }
