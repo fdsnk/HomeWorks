@@ -1,6 +1,8 @@
 package skypro.java.course2.lesson3.transport;
 
-public class Transport {
+import skypro.java.course2.lesson3.Validate_String;
+
+abstract class Transport {
     private String brand;
     private String model;
     private String color;
@@ -8,22 +10,16 @@ public class Transport {
     private String prodCountry;
     private int maxSpeed;
 
-    private static final String DEFAULT = "...default...";
-//    private final String DEFAULT_COLOR = "белый";
-
-    public static String validateString(String needsValidate) {
-        needsValidate = (needsValidate != null && !needsValidate.isEmpty() && !needsValidate.isBlank() ? needsValidate : DEFAULT);
-        return needsValidate;
-    }
-
     public Transport(String brand, String model, int prodYear, String prodCountry, String color, int maxSpeed) {
-        this.brand = validateString(brand);
-        this.model = validateString(model);
+        this.brand = Validate_String.validateString(brand);
+        this.model = Validate_String.validateString(model);
         this.prodYear = (prodYear > 0 ? prodYear : 2000);
-        this.prodCountry = validateString(prodCountry);
+        this.prodCountry = Validate_String.validateString(prodCountry);
         setColor(color);
         setMaxSpeed(maxSpeed);
     }
+
+    public abstract void refill();
 
     @Override
     public String toString() {
@@ -56,10 +52,12 @@ public class Transport {
     }
 
     public void setColor(String color) {
-        this.color = validateString(color);
+        this.color = Validate_String.validateString(color);
     }
 
     public void setMaxSpeed(int maxSpeed) {
         this.maxSpeed = (maxSpeed > 0 ? maxSpeed : 90);
     }
+
+
 }

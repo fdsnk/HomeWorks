@@ -1,5 +1,7 @@
 package skypro.java.course2.lesson3.transport;
 
+import skypro.java.course2.lesson3.Validate_String;
+
 public class Train extends Transport {
     private int priceTrip;
     private int timeTrip;
@@ -16,6 +18,12 @@ public class Train extends Transport {
         setFinalStation(finalStation);
         setNumberOfWagons(numberOfWagons);
     }
+
+    @Override
+    public void refill() {
+        System.out.println("Объекты класса train нужно заправлять дизелем.");
+    }
+
     @Override
     public String toString() {
         return String.format("%s %s, %d года выпуска, страна сборки: %s, цвет кузова: %s, максимальная скорость передвижения: %d км/ч, " +
@@ -45,7 +53,7 @@ public class Train extends Transport {
     }
 
     public void setDepartureStation(String departureStation) {
-        this.departureStation = validateString(departureStation);
+        this.departureStation = Validate_String.validateString(departureStation);
     }
 
     public String getFinalStation() {
@@ -53,7 +61,7 @@ public class Train extends Transport {
     }
 
     public void setFinalStation(String finalStation) {
-        this.finalStation = validateString(finalStation);
+        this.finalStation = Validate_String.validateString(finalStation);
     }
 
     public int getNumberOfWagons() {

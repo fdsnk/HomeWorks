@@ -1,5 +1,7 @@
 package skypro.java.course2.lesson3.transport;
 
+import skypro.java.course2.lesson3.Validate_String;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -10,22 +12,22 @@ public class Car extends Transport {
     private String registerNumber;
     private final int numberOfSeats;
     private boolean summerTires; // 1 - лето; 0 - зима.
-//    private static final String DEFAULT = "...default...";
 
-//    public static String validateString(String needsValidate) {
-//        needsValidate = (needsValidate != null && !needsValidate.isEmpty() && !needsValidate.isBlank() ? needsValidate : DEFAULT);
-//        return needsValidate;
-//    }
-
-    public Car(String brand, String model, int prodYear, String prodCountry, String color, int maxSpeed,float engineVolume,
+    public Car(String brand, String model, int prodYear, String prodCountry, String color, int maxSpeed, float engineVolume,
                String transmission, String bodyType, String registerNumber, int numberOfSeats, boolean summerTires) {
         super(brand, model, prodYear, prodCountry, color, maxSpeed);
         setEngineVolume(engineVolume);
         setTransmission(transmission);
-        this.bodyType = validateString(bodyType);
+        this.bodyType = Validate_String.validateString(bodyType);
         setRegisterNumber(registerNumber);
         this.numberOfSeats = (numberOfSeats > 0 ? numberOfSeats : 2);
         this.summerTires = summerTires;
+    }
+
+    @Override
+    public void refill() {
+        System.out.println("Объекты класса car можно заправлять бензином, дизелем на заправке или " +
+                "заряжать на специальных электроду-парковках, если это электрокар.");
     }
 
     @Override
@@ -86,6 +88,7 @@ public class Car extends Transport {
             this.registerNumber = correctNumber;
         }
     }
+
     public void setSummerTires(boolean summerTires) {
         this.summerTires = summerTires;
     }

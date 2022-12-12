@@ -3,8 +3,6 @@ package skypro.java.course2.lesson3;
 import skypro.java.course2.lesson3.transport.Bus;
 import skypro.java.course2.lesson3.transport.Car;
 import skypro.java.course2.lesson3.transport.Train;
-import skypro.java.course2.lesson3.transport.Transport;
-
 public class Main {
     public static void main(String[] args) {
 
@@ -26,6 +24,7 @@ public class Main {
                 0,"АКПП", "Кроссовер", "М444ММ147", 7, false);
 
         System.out.println(lada + "\n" + audi + "\n" + bmw + "\n" + kia);
+        lada.refill();
         System.out.println();
 
 
@@ -35,6 +34,7 @@ public class Main {
                 "Москва - Ленинградский", "Ленинград-Пассажирский", 8);
 
         System.out.println(train1 + "\n" + train2);
+        train1.refill();
         System.out.println();
 
         Bus bus1 = new Bus("ПАЗ", "123", 1960, "Россия", "Красный", 90);
@@ -42,5 +42,6 @@ public class Main {
         Bus bus3 = new Bus("ПАЗ", "345", 1969, "Россия", "Синий", 92);
 
         System.out.println(bus1 + "\n" + bus2 + "\n" + bus3);
+        bus1.refill();
     }
 }
