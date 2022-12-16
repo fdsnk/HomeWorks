@@ -27,4 +27,14 @@ public class Mammals extends Animals {
     public void setMovementSpeed(int movementSpeed) {
         this.movementSpeed = (movementSpeed > 0 ? movementSpeed : 1);
     }
+
+    @Override
+    public void eat() {
+        System.out.println(" ест...");
+    }
+
+    @Override
+    public void go() {
+        System.out.println(" перемещаеться...");
+    }
 }

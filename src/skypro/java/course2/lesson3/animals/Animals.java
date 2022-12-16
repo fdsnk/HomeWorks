@@ -2,7 +2,9 @@ package skypro.java.course2.lesson3.animals;
 
 import skypro.java.course2.lesson3.Validate_String;
 
-public class Animals {
+import java.util.Objects;
+
+public abstract class Animals {
     private String name;
     private int age;
 
@@ -10,6 +12,14 @@ public class Animals {
         setName(name);
         setAge(age);
     }
+
+    public abstract void eat();
+
+    public void sleep() {
+        System.out.println(this.name + " спит...");
+    }
+
+    public abstract void go();
 
     public String getName() {
         return name;
@@ -25,5 +35,18 @@ public class Animals {
 
     public void setAge(int age) {
         this.age = (Math.max(age, 0));
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Animals)) return false;
+        Animals animals = (Animals) o;
+        return name.equals(animals.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name);
     }
 }
