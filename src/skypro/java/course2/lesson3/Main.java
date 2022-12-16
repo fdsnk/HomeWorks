@@ -1,5 +1,13 @@
 package skypro.java.course2.lesson3;
 
+import skypro.java.course2.lesson3.animals.Animals;
+import skypro.java.course2.lesson3.animals.Birds;
+import skypro.java.course2.lesson3.animals.Mammals;
+import skypro.java.course2.lesson3.animals.Mammals.Herbivores;
+import skypro.java.course2.lesson3.animals.Mammals.Predators;
+import skypro.java.course2.lesson3.animals.Amphibians;
+import skypro.java.course2.lesson3.animals.Birds.Flightless;
+import skypro.java.course2.lesson3.animals.Birds.Flying;
 import skypro.java.course2.lesson3.transport.Bus;
 import skypro.java.course2.lesson3.transport.Car;
 import skypro.java.course2.lesson3.transport.Train;
@@ -43,5 +51,51 @@ public class Main {
 
         System.out.println(bus1 + "\n" + bus2 + "\n" + bus3);
         bus1.refill();
+
+        System.out.println("---------------------------------");
+
+        Herbivores gazelle = new Herbivores("Газель", 3, "Саванна", 100, "Трава");
+        Herbivores giraffe = new Herbivores("Жираф", 1, "Саванна", 50, "Листва");
+        Herbivores horse = new Herbivores("Лошадь", 3, "Лес", 65, "Сено");
+        System.out.println(gazelle);
+        giraffe.eat();
+        System.out.println(horse.getClass());
+
+
+        Predators hyena = new Predators("Гиена", 3, "Саванна", 50, "Мясо");
+        Predators tiger = new Predators("Тигр", 1, "Саванна", 70, "Мясо");
+        Predators bear = new Predators("Медведь", 5, "Лес", 40, "Мясо");
+        System.out.println(tiger);
+        hyena.hunting();
+        bear.go();
+        System.out.println(bear.getClass());
+
+
+        System.out.println("---------------------------------");
+
+        Amphibians frog = new Amphibians("Лягушка", 2, "Пруд");
+        Amphibians snake = new Amphibians("Уж", 1, "Болото");
+        System.out.println(frog);
+        snake.hunting();
+        frog.eat();
+        System.out.println(snake.getClass());
+
+
+        System.out.println("---------------------------------");
+
+        Flightless penguin = new Flightless("Пингвин", 2, "Анктартида", "Земля и вода");
+        Flightless peacock = new Flightless("Павлин", 1, "", "Земля");
+        Flightless dodo = new Flightless("Птица ДоДо", 3, "", "");
+        dodo.walk();
+        penguin.hunting();
+        System.out.println(peacock.getClass());
+
+        Flying seagull = new Flying("Чайка", 2, "Море", "Летает и плавают");
+        Flying albatross = new Flying("Альбатрос", 5, "", "");
+        Flying falcon = new Flying("Сокол", 3, "Тропики", "");
+        falcon.fly();
+        albatross.hunting();
+        System.out.println(falcon.getClass());
+
     }
 }
