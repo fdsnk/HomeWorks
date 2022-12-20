@@ -10,26 +10,29 @@ public class Car extends Transport implements Competing {
 
     @Override
     public void go() {
-        System.out.println("Поехали!");
+        System.out.printf("%s %s - Поехали! \n", getBrand(), getModel());
     }
 
     @Override
     public void stop() {
-        System.out.println("Тормозим!");
+        System.out.printf("%s %s - Тормозим! \n", getBrand(), getModel());
+
     }
 
     @Override
     public void pitStop() {
-        System.out.println("Пит-стоп");
+        System.out.printf("%s %s - На пит-стоп! \n", getBrand(), getModel());
     }
 
     @Override
     public void bestLapTime() {
-        System.out.println("Лучшее время круга");
+        System.out.printf("Лучшее время круга - %s %s: %.0f мин. %.0f сек. \n", getBrand(), getModel(),
+                (1 + Math.random() * (20)), Math.random() * 59);
     }
 
     @Override
     public void maxSpeed() {
-        System.out.println("Максимальная скорость");
+        System.out.printf("Максимальная скорость - %s %s: %.0f км/ч \n", getBrand(), getModel(),
+                (100 + Math.random() * (100)));
     }
 }

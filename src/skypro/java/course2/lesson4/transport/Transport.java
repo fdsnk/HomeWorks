@@ -2,6 +2,8 @@ package skypro.java.course2.lesson4.transport;
 
 import skypro.java.course2.lesson4.Validate_String;
 
+import java.util.Objects;
+
 public abstract class Transport {
     private String brand;
     private String model;
@@ -26,12 +28,6 @@ public abstract class Transport {
         this.engineVolume = (engineVolume >= 0 ? engineVolume : 1.5f);
     }
 
-    @Override
-    public String toString() {
-        return String.format("%s %s, объем двигателя %.1f литра.",
-                brand, model, engineVolume);
-    }
-
     public String getBrand() {
         return brand;
     }
@@ -41,5 +37,22 @@ public abstract class Transport {
     }
 
 
+    @Override
+    public String toString() {
+        return String.format("%s %s, объем двигателя %.1f литров.",
+                getBrand(), getModel(), getEngineVolume());
+    }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Transport)) return false;
+        Transport transport = (Transport) o;
+        return Float.compare(transport.engineVolume, engineVolume) == 0 && Objects.equals(brand, transport.brand) && Objects.equals(model, transport.model);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(brand, model, engineVolume);
+    }
 }

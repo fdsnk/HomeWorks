@@ -3,44 +3,33 @@ package skypro.java.course2.lesson4.drivers;
 import skypro.java.course2.lesson4.Validate_String;
 import skypro.java.course2.lesson4.transport.Transport;
 
-public class Driver {
+public abstract class Driver {
     private String name;
-    private String license;
+    private boolean license;
     private int experience;
 
-    public Driver(String name, String license, int experience) {
+    public Driver(String name, boolean license, int experience) {
         this.name = Validate_String.validateString(name);
         setLicense(license);
         setExperience(experience);
     }
 
-    public void drive(Transport car) {
-        System.out.println("Водитель " + getName() + " с категорией '" + getLicense() + "' может управлять автомобилем: " + car.getBrand() +
-                " " + car.getModel());
-    }
+    public abstract void start();
 
-    public void start() {
-        System.out.println("Начать движение");
-    }
+    public abstract void stop();
 
-    public void stop() {
-        System.out.println("Закончить движение");
-    }
-
-    public void refuelTheCar() {
-        System.out.println("Заправить авто");
-    }
+    public abstract void refuelTheCar();
 
     public String getName() {
         return name;
     }
 
-    public String getLicense() {
+    public boolean getLicense() {
         return license;
     }
 
-    public void setLicense(String license) {
-        this.license = Validate_String.validateString(license);
+    public void setLicense(boolean license) {
+        this.license = license;
     }
 
     public int getExperience() {
@@ -49,5 +38,13 @@ public class Driver {
 
     public void setExperience(int experience) {
         this.experience = (experience >= 0 ? experience : 1);
+    }
+
+    @Override
+    public String toString() {
+        return "Водитель: " + getName() +
+                ", наличие прав " + getLicense() +
+                ", опыт " + getExperience() +
+                " лет";
     }
 }
