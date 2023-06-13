@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 public class University {
-    private Map<Integer, Student> allStudents;
+    private Map<Integer, Student> allStudents = new HashMap<Integer, Student>();
     private int countId = 1;
 
     public void addStudent(Student student) {
